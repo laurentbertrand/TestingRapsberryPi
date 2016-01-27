@@ -31,11 +31,17 @@ namespace TestingRapsberryPi
 
         private async void btnLogin_Click(object sender, RoutedEventArgs e)
         {
-            if (await DialogBox.ShowDialogBoxAsync("title", "textbutton", EDialogBoxStyle.OKCancelButtons ) == EDialogBoxResult.OK)
+            if (string.IsNullOrEmpty(textBoxPassword.Text) && (string.IsNullOrEmpty(textBoxUser.Text)))
             {
-                return;
-            };
-            
+                
+            }
+            else
+            {
+                if (await DialogBox.ShowDialogBoxAsync("title", "textbutton", EDialogBoxStyle.OKCancelButtons) == EDialogBoxResult.OK)
+                {
+                    return;
+                };
+            }
         }
 
         private void ClickParfait(IUICommand cmd)

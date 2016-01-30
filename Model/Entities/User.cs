@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
+
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Model
+namespace Model.Entities
 {
-    public class User : INotifyPropertyChanged
+    public class User : BaseEntity
     {
         private string m_Login;
         public string Login
@@ -40,14 +40,6 @@ namespace Model
             }
         }
 
-        private void RaisePropertyChanged([CallerMemberName] string caller = "")
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(caller));
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
+       
     }
 }

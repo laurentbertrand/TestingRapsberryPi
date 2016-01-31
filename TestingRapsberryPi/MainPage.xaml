@@ -34,7 +34,7 @@
         <TextBlock x:Name="Title" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" Text="Logon" FontSize="45" FontStretch="SemiExpanded" FontWeight="SemiBold"></TextBlock>
         <RelativePanel Padding="15" HorizontalAlignment="Center" VerticalAlignment="Center">
             <TextBlock x:Name="lbluser" Text="Username :" Margin="0,5,10,0" RelativePanel.AlignHorizontalCenterWithPanel="True" Foreground="White"  />
-            <TextBox x:Name="textBoxUser" TextWrapping="NoWrap" Text="{Binding Path=User.Login, Mode=TwoWay}" Width="150" RelativePanel.RightOf="lbluser"  />
+            <TextBox x:Name="textBoxUser" TextWrapping="NoWrap" Text="{Binding Path=User.Login, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="150" RelativePanel.RightOf="lbluser"  />
 
             <TextBlock Name="lblPassword" Text="Password :" Margin="0,5,10,0" RelativePanel.AlignLeftWith="lbluser" RelativePanel.Below="lbluser" Foreground="White" />
             <TextBox Name="textBoxPassword" TextWrapping="NoWrap" Text="" Width="150" RelativePanel.Below ="textBoxUser" RelativePanel.AlignLeftWith="textBoxUser"/>

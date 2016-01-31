@@ -11,6 +11,12 @@ namespace Model.ViewModels
     {
         private User _user;
 
+        public LoginViewModel()
+        {
+            _user = new User();
+            _user.Login = "Laurent";
+            _user.Password = "Password";
+        }
         public User User
         {
             get

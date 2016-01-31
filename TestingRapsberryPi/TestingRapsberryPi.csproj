@@ -133,6 +133,10 @@
     </SDKReference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{3b544b3f-9835-46f3-9f25-eb544fc6d7b1}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UIFramework\UIFramework.csproj">
       <Project>{d1abc2b2-29b2-4825-bcb1-c97a06e7f717}</Project>
       <Name>UIFramework</Name>

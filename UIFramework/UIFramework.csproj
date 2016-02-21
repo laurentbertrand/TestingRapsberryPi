@@ -107,7 +107,11 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DialogBox.cs" />
+    <Compile Include="Commands\DelegateCommand.cs" />
+    <Compile Include="Dialogs\DialogBox.cs" />
+    <Compile Include="Navigation\INavigationService.cs" />
+    <Compile Include="Navigation\NavigationService.cs" />
+    <Compile Include="Navigation\ViewService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Properties\UIFramework.rd.xml" />
   </ItemGroup>

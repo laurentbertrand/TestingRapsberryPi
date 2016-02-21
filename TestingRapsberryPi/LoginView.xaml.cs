@@ -23,32 +23,12 @@ namespace TestingRapsberryPi
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class LoginView : Page
     {
-        public MainPage()
+        public LoginView()
         {
             this.InitializeComponent();
             this.DataContext = new LoginViewModel();
-        }
-
-        private async void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-            if (string.IsNullOrEmpty(textBoxPassword.Text) && (string.IsNullOrEmpty(textBoxUser.Text)))
-            {
-                
-            }
-            else
-            {
-                if (await DialogBox.ShowDialogBoxAsync("title", "textbutton", EDialogBoxStyle.OKCancelButtons) == EDialogBoxResult.OK)
-                {
-                    return;
-                };
-            }
-        }
-
-        private void ClickParfait(IUICommand cmd)
-        {
-            var id = cmd.Id;
         }
     }
 }

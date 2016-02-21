@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using UIFramework.Navigation;
 using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
@@ -67,12 +68,14 @@ namespace TestingRapsberryPi
                 Window.Current.Content = rootFrame;
             }
 
+            InitializeViewService(rootFrame);
+
             if (rootFrame.Content == null)
             {
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+                rootFrame.Navigate(typeof(LoginView), e.Arguments);
             }
             // Ensure the current window is active
             Window.Current.Activate();
@@ -100,6 +103,13 @@ namespace TestingRapsberryPi
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
             deferral.Complete();
+        }
+
+        private void InitializeViewService(Frame rootFrame)
+        {
+            ViewService.Service.NavigationService.Initialized(rootFrame);
+            ViewService.Service.RegisterView("MainView", typeof(MainView));
+            //ViewService.Service.RegisterView("BlankPage2", typeof(BlankPage2));
         }
     }
 }

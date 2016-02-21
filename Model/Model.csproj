@@ -113,6 +113,12 @@
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <EmbeddedResource Include="Properties\Model.rd.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UIFramework\UIFramework.csproj">
+      <Project>{d1abc2b2-29b2-4825-bcb1-c97a06e7f717}</Project>
+      <Name>UIFramework</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

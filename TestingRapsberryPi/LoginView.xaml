@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
-    x:Class="TestingRapsberryPi.MainPage"
+    x:Class="TestingRapsberryPi.LoginView"
     mc:Ignorable="d">
 
     <Grid Background="#FF3E52D1">
@@ -37,9 +37,9 @@
             <TextBox x:Name="textBoxUser" TextWrapping="NoWrap" Text="{Binding Path=User.Login, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="150" RelativePanel.RightOf="lbluser"  />
 
             <TextBlock Name="lblPassword" Text="Password :" Margin="0,5,10,0" RelativePanel.AlignLeftWith="lbluser" RelativePanel.Below="lbluser" Foreground="White" />
-            <TextBox Name="textBoxPassword" TextWrapping="NoWrap" Text="" Width="150" RelativePanel.Below ="textBoxUser" RelativePanel.AlignLeftWith="textBoxUser"/>
+            <TextBox Name="textBoxPassword" TextWrapping="NoWrap" Text="{Binding Path=User.Password, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Width="150" RelativePanel.Below ="textBoxUser" RelativePanel.AlignLeftWith="textBoxUser"/>
 
-            <Button Name="btnLogin" RelativePanel.Below="textBoxPassword" RelativePanel.AlignLeftWith="textBoxPassword" Margin="0,10,20,0" Click="btnLogin_Click" Background="{ThemeResource ButtonBackgroundThemeBrush}">Login</Button>
+            <Button Name="btnLogin" Command="{Binding Path=ValidateLogin}" RelativePanel.Below="textBoxPassword" RelativePanel.AlignLeftWith="textBoxPassword" Margin="0,10,20,0" Background="{ThemeResource ButtonBackgroundThemeBrush}">Login</Button>
             <TextBlock x:Name="VM" Text="{Binding Path=User.Login}"></TextBlock>
         </RelativePanel>
 
